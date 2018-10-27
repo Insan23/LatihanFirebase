@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         ref.child(Util.TABEL_FOTO).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                modelList.clear();
                 for (DataSnapshot data: dataSnapshot.getChildren()) {
                     modelList.add(data.getValue(Foto.class));
                 }
